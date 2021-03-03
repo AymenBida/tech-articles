@@ -15,6 +15,12 @@
         <%= link_to 'LOGIN', new_session_path, class: 'navbar__link navbar__link--first' %>
         <%= link_to 'REGISTER', new_user_path, class: 'navbar__link' %>
       </nav>
+      <% if notice %>
+        <div class="notice notice--success"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="notice notice--alert"><%= alert %></div>
+      <% end %>
       <%= yield %>
     </div>
   </body>

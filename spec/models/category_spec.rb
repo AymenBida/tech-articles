@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   context 'Validations' do
     subject { described_class.new(name: 'CategoryName') }
-    
+
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
     end

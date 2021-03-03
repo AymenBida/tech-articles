@@ -1,10 +1,11 @@
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   context 'Validations' do
     let(:create_user) { User.create(id: 1, name: 'Someone') }
     subject { described_class.new(author_id: 1, title: 'ArticleTitle', text: 'ArticleText', image: 'ArticleImage') }
-    
+
     before do
       create_user
     end
@@ -51,3 +52,4 @@ RSpec.describe Article, type: :model do
     it { should have_and_belong_to_many(:categories) }
   end
 end
+# rubocop:enable Metrics/BlockLength

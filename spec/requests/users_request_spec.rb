@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Sessions', type: :request do
+RSpec.describe 'Users', type: :request do
   describe 'GET /new' do
     it 'returns http success' do
-      get '/sessions/new'
+      get '/users/new'
       expect(response).to have_http_status(:success)
     end
   end
