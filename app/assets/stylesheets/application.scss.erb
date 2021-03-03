@@ -1,5 +1,5 @@
 @import "bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Share+Tech&display=swap');
 
 .body {
   background-image: url(<%= asset_path 'background.jpg' %>);
@@ -25,6 +25,10 @@
     text-decoration: none;
     color: black;
   }
+  &:focus {
+    outline: none;
+    box-shadow: lightsalmon 0 3px 2px -2px;
+  }
 }
 
 .navbar__link {
@@ -39,9 +43,64 @@
     color: orangered;
     text-decoration: none;
   }
+  &:focus {
+    outline: none;
+    box-shadow: lightsalmon 0 3px 2px -2px;
+    padding-bottom: 0.2em;
+  }
 }
 
 .navbar__link--first {
   margin-left: auto;
   border-left: 0;
+}
+
+.main-container {
+  display: flex;
+  height: calc(100vh - 70.4px);
+  background-image: url(<%= asset_path 'login_wallpaper.jpg' %>);
+  background-size: cover;
+  background-position: center;
+}
+
+.form {
+  min-width: 33vw;
+  max-width: 94%;
+  background-color: whitesmoke;
+  padding: 3em;
+  margin: auto;
+}
+
+.form__title {
+  font-size: 1.8em;
+  font-family: 'Lato', sans-serif;
+}
+
+.form__input-group {
+  margin: 1em 0 0 0;
+  height: 3em;
+  display: flex;
+  border: lightgray solid 0.1px;
+}
+
+.form__input {
+  width: 100%;
+  border: 0;
+  padding: 0 1em;
+  &:focus {
+    outline: none;
+    box-shadow: lightsalmon 0 0 6px;
+  }
+}
+
+.form__btn {
+  background-color: orangered;
+  border: 0;
+  color: whitesmoke;
+  font-weight: 600;
+  padding: 0 1em;
+  &:focus {
+    outline: none;
+    box-shadow: lightsalmon 0 0 6px;
+  }
 }
