@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_085115) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.bigint "author_id", null: false
+    t.integer "author_id", null: false
     t.string "title"
     t.text "text"
     t.string "image"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2021_03_03_085115) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
-  add_foreign_key "articles", "users", column: "author_id"
   add_foreign_key "votes", "articles"
   add_foreign_key "votes", "users"
 end
