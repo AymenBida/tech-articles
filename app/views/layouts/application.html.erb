@@ -12,7 +12,7 @@
     <div class="container">
       <nav class="navbar">
         <%= link_to 'Tech Articles', root_path, class: 'navbar__brand' %>
-        <%= link_to 'LOGIN', sessions_login_path, class: 'navbar__link navbar__link--first' %>
+        <%= link_to 'LOGIN', new_session_path, class: 'navbar__link navbar__link--first' %>
         <%= link_to 'REGISTER', new_user_path, class: 'navbar__link' %>
       </nav>
       <%= yield %>

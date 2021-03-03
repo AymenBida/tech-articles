@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  root 'sessions#login'
-  get 'sessions/login'
-  get 'sessions/logout'
+  root 'sessions#new'
+  resources :sessions, only: [:new, :create, :destroy]
   resources :categories
   resources :votes
   resources :articles

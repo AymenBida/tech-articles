@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_085115) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_users_on_name", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
