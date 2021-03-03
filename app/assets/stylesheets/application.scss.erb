@@ -1,6 +1,47 @@
 @import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 
 .body {
   background-image: url(<%= asset_path 'background.jpg' %>);
 }
 
+.navbar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 1.3em 1em 1.5em;
+}
+
+.navbar__brand {
+  color: black;
+  text-decoration: none;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 1.6em;
+  font-weight: 900;
+  padding: 0 0.5em;
+  line-height: 1em;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.navbar__link {
+  color: grey;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.1em;
+  font-size: 0.8em;
+  padding: 0 0.5em;
+  border-left: grey 2px solid;
+  &:hover {
+    color: orangered;
+    text-decoration: none;
+  }
+}
+
+.navbar__link--first {
+  margin-left: auto;
+  border-left: 0;
+}
