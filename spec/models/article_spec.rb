@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe Article, type: :model do
   context 'Validations' do
-    subject { described_class.new(name: 'Someone') }
-
+    let(:author) { User.new(name: 'Someone') }
+    subject { described_class.new(author_id: author.id, title: 'ArticleTitle', text: 'ArticleText') }
+    p subject
     it 'is valid with a valid name' do
       expect(subject).to be_valid
     end
