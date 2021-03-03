@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'sessions#login'
+  get 'sessions/login'
+  get 'sessions/logout'
   resources :categories
   resources :votes
   resources :articles
