@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+CATEGORIES = ['Web development', 'Network', 'Artificial Intelligence', 'Internet Of Things', 'Startup',
+  'Gaming', 'Hardware', 'Other'].freeze
+
+CATEGORIES.each { |cat| Category.create(name: cat, priority: 0) }
