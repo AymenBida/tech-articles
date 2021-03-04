@@ -91,6 +91,11 @@ a {
   background-position: center;
 }
 
+.main-container--no-limit {
+  padding: 3em 0;
+  height: auto;
+}
+
 .form {
   min-width: 33vw;
   max-width: 94%;
@@ -104,9 +109,26 @@ a {
   font-family: 'Lato', sans-serif;
 }
 
+.form__group {
+  margin-top: 1em;
+}
+
+.form__group--submit {
+  margin-top: 3em;
+}
+
 .form__input-group {
-  margin: 1em 0 0 0;
-  height: 3em;
+  height: auto;
+  min-height: 3em;
+  display: flex;
+  border: $lightgray solid 0.1px;
+}
+
+.form__input-group--submit {
+  height: auto;
+  min-height: 3em;
+  width: fit-content;
+  margin: auto;
   display: flex;
   border: $lightgray solid 0.1px;
 }
@@ -121,6 +143,11 @@ a {
   }
 }
 
+.form__input--area {
+  height: 7em;
+  padding: 0.5em 1em;
+}
+
 .form__btn {
   background-color: $orange;
   border: 0;
@@ -131,6 +158,13 @@ a {
     outline: none;
     box-shadow: $orange-flow 0 0 6px;
   }
+}
+
+.form__label {
+  border: 0;
+  color: $black;
+  font-weight: 600;
+  padding: 0 0.5em;
 }
 
 .notice {
