@@ -60,4 +60,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'rubocop', '~>0.81.0'
 
-gem 'rails_heroicon', '~> 1.0'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
