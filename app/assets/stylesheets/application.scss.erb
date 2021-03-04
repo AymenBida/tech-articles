@@ -1,6 +1,17 @@
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Share+Tech&display=swap');
 
+$black: black;
+$white: white;
+$white-ish: whitesmoke;
+$orange-flow: lightsalmon;
+$orange: orangered;
+$alert: rgba(177, 38, 14, 0.85);
+$success: rgba(62, 129, 62, 0.85);
+$neutral: rgba(129, 129, 129, 0.85);
+$lightgray: lightgray;
+$grey: grey;
+
 .body {
   background-image: url(<%= asset_path 'background.jpg' %>);
 }
@@ -9,12 +20,12 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: $white-ish;
   padding: 1.3em 1em 1.5em;
 }
 
 .navbar__brand {
-  color: black;
+  color: $black;
   text-decoration: none;
   font-family: 'Share Tech', sans-serif;
   font-size: 1.6em;
@@ -23,29 +34,29 @@
   line-height: 1em;
   &:hover {
     text-decoration: none;
-    color: black;
+    color: $black;
   }
   &:focus {
     outline: none;
-    box-shadow: lightsalmon 0 3px 2px -2px;
+    box-shadow: $orange-flow 0 3px 2px -2px;
   }
 }
 
 .navbar__link {
-  color: grey;
+  color: $grey;
   text-decoration: none;
   font-weight: 600;
   line-height: 1.1em;
   font-size: 0.8em;
   padding: 0 0.5em;
-  border-left: grey 2px solid;
+  border-left: $grey 2px solid;
   &:hover {
-    color: orangered;
+    color: $orange;
     text-decoration: none;
   }
   &:focus {
     outline: none;
-    box-shadow: lightsalmon 0 3px 2px -2px;
+    box-shadow: $orange-flow 0 3px 2px -2px;
     padding-bottom: 0.1em;
   }
 }
@@ -66,7 +77,7 @@
 .form {
   min-width: 33vw;
   max-width: 94%;
-  background-color: whitesmoke;
+  background-color: $white-ish;
   padding: 3em;
   margin: auto;
 }
@@ -80,7 +91,7 @@
   margin: 1em 0 0 0;
   height: 3em;
   display: flex;
-  border: lightgray solid 0.1px;
+  border: $lightgray solid 0.1px;
 }
 
 .form__input {
@@ -89,36 +100,36 @@
   padding: 0 1em;
   &:focus {
     outline: none;
-    box-shadow: lightsalmon 0 0 6px;
+    box-shadow: $orange-flow 0 0 6px;
   }
 }
 
 .form__btn {
-  background-color: orangered;
+  background-color: $orange;
   border: 0;
-  color: whitesmoke;
+  color: $white-ish;
   font-weight: 600;
   padding: 0 1em;
   &:focus {
     outline: none;
-    box-shadow: lightsalmon 0 0 6px;
+    box-shadow: $orange-flow 0 0 6px;
   }
 }
 
 .notice {
   display: flex;
   height: 3em;
-  color: white;
+  color: $white;
   font-weight: 600;
-  background-color: rgba(129, 129, 129, 0.85);
+  background-color: $neutral;
   justify-content: center;
   align-items: center;
 }
 
 .notice--success {
-  background-color: rgba(62, 129, 62, 0.85);
+  background-color: $success;
 }
 
 .notice--alert {
-  background-color: rgba(177, 38, 14, 0.85);
+  background-color: $alert;
 }
