@@ -12,6 +12,7 @@
     <div class="container">
       <nav class="navbar">
         <%= link_to 'Tech Articles', root_path, class: 'navbar__brand' %>
+        <%= show_user_links %>
         <%= show_logged_in %>
       </nav>
       <% if notice %>

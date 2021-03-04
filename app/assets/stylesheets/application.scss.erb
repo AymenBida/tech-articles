@@ -43,6 +43,7 @@ a {
   font-size: 1.6em;
   font-weight: 900;
   padding: 0 0.5em;
+  margin-right: 0.5em;
   line-height: 1em;
   &:hover {
     color: $black;
@@ -73,6 +74,12 @@ a {
 .navbar__link--first {
   margin-left: auto;
   border-left: 0;
+}
+
+.navbar__link--menu {
+  border-left: 0;
+  font-size: 1em;
+  padding: 0 1em;
 }
 
 .main-container {
@@ -210,4 +217,24 @@ a {
     color: $white-ish;
     box-shadow: $orange-flow 0 3px 2px -2px;
   }
+}
+
+.main,
+.categories {
+  display: flex;
+  color: white;
+}
+
+.featured,
+.location,
+.category {
+  padding: 1em;
+}
+
+.featured {
+  width: 75%;
+}
+
+.location {
+  width: 25%;
 }
