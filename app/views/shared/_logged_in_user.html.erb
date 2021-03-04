@@ -1,0 +1,2 @@
+<%= link_to "#{current_user.name.upcase}", categories_path, class: 'navbar__link navbar__link--first'  %>
+<%= link_to 'LOGOUT', session_path(current_user.id), method: :delete, class: 'navbar__link' %>
