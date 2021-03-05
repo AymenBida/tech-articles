@@ -5,20 +5,20 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = User.first.articles.build(article_params)
-    # @article = current_user.articles.build(author_id: current_user.id, article_params)
-    @article.valid?
-    p @article.errors.full_messages
+    @article = current_user.articles.build(article_params)
     if @article.save
-      puts 'dmldkdmlkzmdlkzmdlk------------------------'
-      @category = @article.categories << Category.find_by(id: article_category_params)
+      @category = @article.categories << Category.find_by(id: article_category_params[:category_id])
+      redirect_to categories_path, notice: 'You successfully created an article'
+    else
+      flash.now.alert = 'Oops, something went wrong !'
+      render :new
     end
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:author_id, :title, :text, :image)
+    params.require(:article).permit(:title, :text, :image)
   end
 
   def article_category_params
