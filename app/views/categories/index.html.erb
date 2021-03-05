@@ -11,24 +11,10 @@
   </section>
 </div>
 <div class="categories">
-  <div class="category">
-    <h2 class="category__title">Lorem, ipsum.</h2>
-    <p class="category__body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis quisquam 
-      ex cupiditate nulla quidem sunt facere. Beatae nihil perferendis rem!</p>
-  </div>
-  <div class="category">
-    <h2 class="category__title">Lorem, ipsum.</h2>
-    <p class="category__body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis quisquam 
-      ex cupiditate nulla quidem sunt facere. Beatae nihil perferendis rem!</p>
-  </div>
-  <div class="category">
-    <h2 class="category__title">Lorem, ipsum.</h2>
-    <p class="category__body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis quisquam 
-      ex cupiditate nulla quidem sunt facere. Beatae nihil perferendis rem!</p>
-  </div>
-  <div class="category">
-    <h2 class="category__title">Lorem, ipsum.</h2>
-    <p class="category__body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis quisquam 
-      ex cupiditate nulla quidem sunt facere. Beatae nihil perferendis rem!</p>
-  </div>
+  <% @categories.each do |cat| %>
+    <div class="category" style="background-image: url(<%= cat.last_article.image %>)">
+      <h2 class="category__title"><%= cat.name %></h2>
+      <h3 class="category__body"><%= cat.last_article.title %></h3>
+    </div>
+  <% end %>
 </div>
