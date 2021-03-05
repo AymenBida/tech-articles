@@ -27,6 +27,5 @@ RSpec.describe User, type: :model do
   context 'Associations' do
     it { should have_many(:articles) }
     it { should have_many(:votes) }
-    it { should have_many(:articles).through(:votes) }
   end
 end

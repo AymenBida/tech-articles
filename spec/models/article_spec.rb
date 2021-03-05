@@ -48,7 +48,6 @@ RSpec.describe Article, type: :model do
   context 'Associations' do
     it { should belong_to(:author).class_name('User') }
     it { should have_many(:votes) }
-    it { should have_many(:users).through(:votes) }
     it { should have_and_belong_to_many(:categories) }
   end
 end
