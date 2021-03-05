@@ -12,7 +12,8 @@
 </div>
 <div class="categories">
   <% @categories.each do |cat| %>
-    <div class="category" style="background-image: url(<%= cat.last_article.image %>)">
+    <div class="category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent, rgba(0, 0, 0, 0.5)),
+    url(<%= cat.last_article.image %>)">
       <h2 class="category__title"><%= cat.name %></h2>
       <h3 class="category__body"><%= cat.last_article.title %></h3>
     </div>
