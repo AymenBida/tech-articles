@@ -14,7 +14,7 @@
   <% @categories.each do |cat| %>
     <div class="category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent, rgba(0, 0, 0, 0.5)),
     url(<%= cat.last_article.image %>)">
-      <h2 class="category__title"><%= cat.name %></h2>
+      <%= link_to cat.name, articles_path(cat: cat.id), class: 'category__title' %>
       <h3 class="category__body"><%= cat.last_article.title %></h3>
     </div>
   <% end %>

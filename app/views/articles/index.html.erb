@@ -1,0 +1,13 @@
+<div class="main-container main-container--for-articles">
+<div class="articles">
+  <% @articles.each do |article| %>
+    <div class="article">
+      <div class="article__image" style="background-image: url(<%= article.image %>)"></div>
+      <div class="article__card">
+        <h1 class="article__title"><%= article.title %></h1><span><%= show_vote(article) %></span>
+        <p class="article__body"><%= article.text %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>

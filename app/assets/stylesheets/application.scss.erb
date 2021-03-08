@@ -3,6 +3,7 @@
 @import 'font-awesome.css';
 
 $black: black;
+$black-ish: rgb(53, 53, 53);
 $white: white;
 $white-ish: whitesmoke;
 $orange-flow: lightsalmon;
@@ -13,6 +14,7 @@ $neutral: rgba(129, 129, 129, 0.85);
 $lightgray: lightgray;
 $grey: grey;
 $brown-ish: #4E443F;
+$yellow: yellow;
 
 $linear-hue: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
 
@@ -94,6 +96,11 @@ h3 {
   background-image: url(<%= asset_path 'login_wallpaper.jpg' %>);
   background-size: cover;
   background-position: center;
+}
+
+.main-container--for-articles {
+  display: block;
+  min-height: 450px;
 }
 
 .main-container--no-limit {
@@ -262,7 +269,7 @@ h3 {
 .categories {
   display: flex;
   flex-wrap: wrap;
-  color: white;
+  color: $white;
   min-height: 430px;
 }
 
@@ -292,15 +299,83 @@ h3 {
 }
 
 .category__title {
+  color: $white;
   display: inline-block;
   padding: 0 0.18em 0.18em;
   font-size: 1.1em;
   font-weight: 900;
-  border-bottom: yellow solid 2px;
+  border-bottom: $yellow solid 2px;
+  &:focus {
+    outline: none;
+    border-bottom: $orange solid 2.5px;
+    padding: 0 0.18em 0.14em;
+  }
 }
 
 .category__body {
   padding: 0 0.18em 0.18em;
   font-size: 1.1em;
   font-weight: 900;
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  &::before {
+    content: '';
+    display: block;
+    background-color: $brown-ish;
+    width: 100%;
+    height: 0.3em;
+  }
+}
+
+.article {
+  width: 50%;
+  display: flex;
+}
+
+.article__image {
+  width: 50%;
+  min-height: 220px;
+  background-position: center;
+  background-size: cover;
+}
+
+.article__card {
+  width: 50%;
+  background-color: $white-ish;
+  padding: 1em 1em 1.5em;
+}
+
+.article__title {
+  display: inline-block;
+  color: $black-ish;
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+.article__like {
+  margin: 0 0.6em;
+  font-size: 1.3em;
+  color: $lightgray;
+  transition: color ease-out 250ms;
+  &:hover {
+    color: $orange;
+  }
+}
+
+.article__dislike {
+  margin: 0 0.6em;
+  font-size: 1.3em;
+  color: $orange;
+  &:hover {
+    color: $black;
+  }
+}
+
+.article__body {
+  color: $black-ish;
+  font-size: 1em;
 }
