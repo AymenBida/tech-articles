@@ -100,7 +100,8 @@ h3 {
 
 .main-container--for-articles {
   display: block;
-  min-height: 450px;
+  height: 100%;
+  min-height: calc(100vh - 150.4px);
 }
 
 .main-container--no-limit {
@@ -282,11 +283,7 @@ h3 {
 }
 
 .featured {
-  width: 75%;
-}
-
-.location {
-  width: 25%;
+  width: 100%;
 }
 
 .category {
@@ -340,12 +337,18 @@ h3 {
   min-height: 220px;
   background-position: center;
   background-size: cover;
+  background-image: url(<%= asset_path 'no_image.svg.png' %>);
+}
+
+.article__image--order-second {
+  order: 1;
 }
 
 .article__card {
   width: 50%;
   background-color: $white-ish;
   padding: 1em 1em 1.5em;
+  max-height: 250px;
 }
 
 .article__title {
@@ -354,6 +357,7 @@ h3 {
   font-weight: 900;
   font-size: 1.2em;
   line-height: 1.5em;
+  margin-bottom: 1em;
 }
 
 .article__like {
@@ -370,6 +374,7 @@ h3 {
   margin: 0 0.6em;
   font-size: 1.3em;
   color: $orange;
+  transition: color ease-out 250ms;
   &:hover {
     color: $black;
   }
@@ -378,4 +383,9 @@ h3 {
 .article__body {
   color: $black-ish;
   font-size: 1em;
+}
+
+.article__author {
+  font-weight: 600;
+  text-align: end;
 }

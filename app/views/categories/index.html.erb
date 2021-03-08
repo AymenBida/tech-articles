@@ -5,17 +5,13 @@
       cumque sunt accusantium esse sequi distinctio iste debitis sit officiis qui fugit placeat, unde quas eos atque,
       obcaecati repellendus!</p>
   </article>
-  <section class="location">
-    <p class="location__info">Lorem, ipsum dolor.</p>
-    <p class="featured__body">Lorem, ipsum dolor.</p>
-  </section>
 </div>
 <div class="categories">
   <% @categories.each do |cat| %>
-    <div class="category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent, rgba(0, 0, 0, 0.5)),
-    url(<%= cat.last_article.image %>)">
+    <div class="category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), transparent, rgba(0, 0, 0, 0.7)),
+    url(<%= cat.last_article.image %>), url(<%= asset_path 'no_image.svg.png' %>)">
       <%= link_to cat.name, articles_path(cat: cat.id), class: 'category__title' %>
-      <h3 class="category__body"><%= cat.last_article.title %></h3>
+      <h3 class="category__body"><%= cat.last_article.title.truncate(50) %></h3>
     </div>
   <% end %>
 </div>
