@@ -364,9 +364,15 @@ h3 {
   margin: 0 0.6em;
   font-size: 1.3em;
   color: $lightgray;
-  transition: color ease-out 250ms;
+  transition: all ease-out 250ms;
   &:hover {
     color: $orange;
+    text-shadow: 0 0 10px $orange-flow;
+  }
+  &:focus {
+    outline: none;
+    color: $orange;
+    text-shadow: 0 0 10px $orange-flow;
   }
 }
 
@@ -374,9 +380,15 @@ h3 {
   margin: 0 0.6em;
   font-size: 1.3em;
   color: $orange;
-  transition: color ease-out 250ms;
+  transition: all ease-out 250ms;
   &:hover {
     color: $black;
+    text-shadow: 0 0 10px $black-ish;
+  }
+  &:focus {
+    outline: none;
+    color: $black-ish;
+    text-shadow: 0 0 10px $black-ish;
   }
 }
 
