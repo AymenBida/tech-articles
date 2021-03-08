@@ -25,7 +25,7 @@ RSpec.describe Article, type: :model do
     end
 
     it 'is not valid with a title longer than 100 characters' do
-      subject.title = 'AnExtremelyWierdEnoughLongtitle' * 4
+      subject.title = 'AnExtremelyWeirdEnoughLongtitle' * 4
       expect(subject).to_not be_valid
     end
 
@@ -40,7 +40,7 @@ RSpec.describe Article, type: :model do
     end
 
     it 'is not valid with a text longer than 1000 characters' do
-      subject.text = 'AnExtremelyWierdEnoughLongtext' * 40
+      subject.text = 'AnExtremelyWeirdEnoughLongtext' * 40
       expect(subject).to_not be_valid
     end
   end
