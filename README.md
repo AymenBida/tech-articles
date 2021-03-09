@@ -1,8 +1,8 @@
-# Title
+# Tech Articles
 
-Description
+This is a web app made with Ruby on Rails where users can share articles about technology and vote them.
 
-## Prerequisties
+## Prerequisites
 
 - Ruby 2.7.2
 - Ruby on Rails 6.1.1
@@ -12,16 +12,20 @@ Description
 To get a local copy up and running follow these simple example steps:
 
 - Open your terminal
-- Clone this project into the directory of your choice `git clone https://github.com/AymenBida/<repo>.git`
-- Go to the project folder `cd <repo_name>`
+- Clone this project into the directory of your choice `git clone https://github.com/AymenBida/Tech-articles.git`
+- Go to the project folder `cd Tech-articles`
 
 ### Install
 
 - Run `bundle install`
 - Create the database `rails db:create` 
 - Migrate the database `rails db:migrate`
+- Seed it `rails db:seed`
 
-### Run tests
+If you want to populate the database with some text and images run this task:
+- `rails db:populate`
+
+### Run
 
 - Run `rails s` or `rails server`
     
@@ -35,14 +39,14 @@ To get a local copy up and running follow these simple example steps:
 👤 **Aymen Bida**
 
 - GitHub: [@AymenBida](https://github.com/AymenBida)
-- Twitter: [@AymenBida](https://twitter.com/AymenBida)
 - LinkedIn: [AymenBida](https://www.linkedin.com/in/aymenbida/)
+- Twitter: [@AymenBida](https://twitter.com/AymenBida)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/AymenBida/<repo_name/issues)
+Feel free to check the [issues page](https://github.com/AymenBida/Tech-articles/issues)
 
 ## 📝 License
 
