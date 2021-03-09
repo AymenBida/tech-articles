@@ -1,0 +1,13 @@
+<div class="main-container">
+  <div class="form">
+    <h1 class="form__title">Welcome! Enter your username to register</h1>
+    <%= form_with model: @user do |f| %>
+      <div class="form__group">
+        <div class="form__input-group">
+          <%= f.text_field :name, required: true, placeholder: 'Username', class: 'form__input' %>
+          <%= f.submit 'REGISTER', class: 'form__btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="main-container">
+  <div class="form">
+    <h1 class="form__title">Welcome! Please enter your username to login</h1>
+    <%= form_with scope: :user, url: '/sessions' do |f| %>
+      <div class="form__group">
+        <div class="form__input-group">
+          <%= f.text_field :name, required: true, placeholder: 'Username', class: 'form__input' %>
+          <%= f.submit 'LOGIN', class: 'form__btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
