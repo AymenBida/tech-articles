@@ -12,7 +12,10 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      @category = @article.categories << Category.find_by(id: article_category_params[:category_id])
+      @category = Category.find_by(id: article_category_params[:category_id])
+      @category.priority += 1
+      @category.save
+      @article.categories << @category
       redirect_to categories_path, notice: 'You successfully created an article'
     else
       flash.now.alert = 'Oops, something went wrong !'

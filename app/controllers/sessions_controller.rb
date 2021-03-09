@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
-  def new; end
+  def new
+    redirect_to categories_path if current_user
+  end
 
   def create
     @user = User.find_by(name: user_params[:name])
