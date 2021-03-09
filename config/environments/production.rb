@@ -119,4 +119,6 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag.html_safe }
+
+  config.secret_key_base = '2a53f8f65364615729327a6af41aa7766f9965167db128ebb68efd700cf5900bc930922fd94bdc4dadad4dc468d64527e4de7740f2b7e386b2dd19b3a4b7949b'
 end
