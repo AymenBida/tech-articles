@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to categories_path, notice: "Welcome #{@user.name}! You are now logged in!"
     else
-      flash.now.alert = "Sorry, the user name is incorrect."
+      flash.now.alert = 'Sorry, the user name is incorrect.'
       render :new
     end
   end
