@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TechArticles</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="body">
+    <div class="container">
+      <nav class="navbar">
+        <%= link_to 'Tech Articles', root_path, class: 'navbar__brand' %>
+        <%= show_user_links %>
+        <%= show_logged_in %>
+      </nav>
+      <% if notice %>
+        <div class="notice notice--success"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="notice notice--alert"><%= alert %></div>
+      <% end %>
+      <%= yield %>
+      <footer class="footer">
+        <%= link_to 'Tech Articles', root_path, class: 'footer__brand' %>
+        <%= link_to 'Privacy Policy', '#', class: 'footer__link footer__link--first' %>
+        <%= link_to 'Terms & Conditions', '#', class: 'footer__link' %>
+        <span class="footer__link footer__link--inactive">Aymen Bida. Copyright 2021. All rights reserved.</span>
+        <span class="footer__link footer__link--inactive footer__link--first">Connect with us: </span>
+        <%= link_to fa_icon('linkedin-square'), 'https://www.linkedin.com/in/aymenbida/', class: 'footer__icon' %>
+        <%= link_to fa_icon('github-square'), 'https://github.com/AymenBida', class: 'footer__icon' %>
+        <%= link_to fa_icon('twitter-square'), 'https://twitter.com/AymenBida', class: 'footer__icon' %>
+      </footer>
+    </div>
+  </body>
+</html>
