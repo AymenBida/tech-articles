@@ -1,0 +1,38 @@
+<div class="main-container main-container--no-limit">
+  <div class="form">
+    <h1 class="form__title">Use this form to edit your article: </h1>
+    <%= form_for @article do |f| %>
+      <div class="form__group">
+        <%= f.label :title, class: 'form__label' %>
+        <div class="form__input-group">
+          <%= f.text_field :title, required: true, placeholder: 'Article title', class: 'form__input' %>
+        </div>
+      </div>
+      <div class="form__group">
+        <%= f.label :text, class: 'form__label' %>
+        <div class="form__input-group">
+          <%= f.text_area :text, required: true, placeholder: 'Write your article here', class: 'form__input form__input--area' %>
+        </div>
+      </div>
+      <div class="form__group">
+        <%= f.label :image, class: 'form__label' %>
+        <div class="form__input-group">
+          <%= f.text_field :image, placeholder: 'Add a link to your image here', class: 'form__input' %>
+        </div>
+      </div>
+      <%= fields_for :articles_categories do |field| %>
+      <div class="form__group">
+        <%= f.label :category_id, class: 'form__label' %>
+        <div class="form__input-group">
+          <%= field.select :category_id, @categories, { selected: @category.id }, class: 'form__input' %>
+        </div>
+      </div>
+      <% end %>
+      <div class="form__group form__group--submit">
+        <div class="form__input-group form__input-group--submit">
+          <%= f.submit 'SUBMIT', class: 'form__btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
