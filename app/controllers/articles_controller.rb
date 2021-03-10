@@ -58,7 +58,7 @@ class ArticlesController < ApplicationController
 
   def authenticate_user
     return unless set_article.author.id != current_user.id
-    
+
     redirect_to categories_path, alert: "You can't modify other users articles"
   end
 
