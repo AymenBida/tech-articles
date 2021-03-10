@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user
+  skip_before_action :authenticate_user, only: [:index, :new, :create]
+
   def index
     @category = Category.find(params[:cat])
     @articles = @category.articles.order_by_most_recent
@@ -52,6 +55,12 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def authenticate_user
+    if set_article.author.id != current_user.id
+      redirect_to categories_path, alert: "You can't modify other users articles" 
+    end
+  end
 
   def set_article
     @article = Article.find(params[:id])

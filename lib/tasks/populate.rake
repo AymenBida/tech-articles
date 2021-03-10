@@ -18,6 +18,8 @@ namespace :db do
         article = Article.new(author_id: User.all.sample.id, title: TITLES.sample, text: TEXTS.sample, image: IMAGES.sample)
         article.categories << cat
         article.save
+        cat.priority += 1
+        cat.save
       end
     end
   end

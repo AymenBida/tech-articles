@@ -15,4 +15,6 @@ user = User.create(name: 'Example User')
 Category.all.each do |cat|
   article = user.articles.create(title: 'Example Title', text: 'Example Text')
   article.categories << cat
+  cat.priority += 1
+  cat.save
 end
