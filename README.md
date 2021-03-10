@@ -2,6 +2,7 @@
 
 > This is a web app made with Ruby on Rails where users can share articles about technology and vote them.
 
+
 ![screenshot](app/assets/images/tech_articles.png)
 
 - The home page of this page is the categories page where you can see the different categories existing and the last
@@ -38,6 +39,10 @@ If you want to populate the database with some text and images run this task:
 ### Run
 
 - Run `rails s` or `rails server`
+
+### Test
+
+- Run `rspec` while on the root directory of the app to run tests
     
 ### :hammer: Built With
 
@@ -68,7 +73,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### Credits
+## Credits
 
 - Design idea by Nelson Sakwa on Behance
 
