@@ -1,6 +1,16 @@
 # Tech Articles
 
-This is a web app made with Ruby on Rails where users can share articles about technology and vote them.
+> This is a web app made with Ruby on Rails where users can share articles about technology and vote them.
+
+![screenshot](app/assets/images/tech_articles.png)
+
+- The home page of this page is the categories page where you can see the different categories existing and the last
+article of each one.
+- The articles by category page contains all the articles in the chosen category ordered by the most recent.
+- You can add an article by logging in and clicking on "write an article" and submitting the form.
+## Live demo
+
+Follow [this link](https://blooming-beyond-18904.herokuapp.com/) to try the app.
 
 ## Prerequisites
 
@@ -60,7 +70,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ### Credits
 
-The project is part of Microverse Technical curriculum - Ruby on Rails section
+- Design idea by Nelson Sakwa on Behance
 
 ## Show your support
 
