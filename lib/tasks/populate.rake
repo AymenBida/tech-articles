@@ -11,13 +11,12 @@ IMAGES = ['https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2021/02/1-copy-6
 
 namespace :db do
   task populate: :environment do
-    10.times { |i| User.create(id: i + 2, name: "User #{i + 1}") }
+    10.times { |i| User.create(name: "User #{i + 1}") }
     cats = Category.all
     cats.each do |cat|
       5.times do |_i|
-        article = Article.new(author_id: rand(2..11), title: TITLES.sample, text: TEXTS.sample, image: IMAGES.sample)
+        article = Article.create(author_id: User.all.sample.id, title: TITLES.sample, text: TEXTS.sample, image: IMAGES.sample)
         article.categories << cat
-        article.save
       end
     end
   end

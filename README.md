@@ -1,6 +1,17 @@
 # Tech Articles
 
-This is a web app made with Ruby on Rails where users can share articles about technology and vote them.
+> This is a web app made with Ruby on Rails where users can share articles about technology and vote them.
+
+
+![screenshot](app/assets/images/tech_articles.png)
+
+- The home page of this page is the categories page where you can see the different categories existing and the last
+article of each one.
+- The articles by category page contains all the articles in the chosen category ordered by the most recent.
+- You can add an article by logging in and clicking on "write an article" and submitting the form.
+## Live demo
+
+Follow [this link](https://blooming-beyond-18904.herokuapp.com/) to try the app.
 
 ## Prerequisites
 
@@ -18,6 +29,7 @@ To get a local copy up and running follow these simple example steps:
 ### Install
 
 - Run `bundle install`
+- Run `yarn install`
 - Create the database `rails db:create` 
 - Migrate the database `rails db:migrate`
 - Seed it `rails db:seed`
@@ -28,6 +40,10 @@ If you want to populate the database with some text and images run this task:
 ### Run
 
 - Run `rails s` or `rails server`
+
+### Test
+
+- Run `rspec` while on the root directory of the app to run tests
     
 ### :hammer: Built With
 
@@ -58,9 +74,9 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### Credits
+## Credits
 
-The project is part of Microverse Technical curriculum - Ruby on Rails section
+- Design idea by Nelson Sakwa on Behance
 
 ## Show your support
 

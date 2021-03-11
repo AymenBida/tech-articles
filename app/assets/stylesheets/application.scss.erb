@@ -7,6 +7,8 @@ $black-ish: rgb(53, 53, 53);
 $white: white;
 $white-ish: whitesmoke;
 $orange-flow: lightsalmon;
+$orange-trans: rgba(255, 160, 122, 0.25);
+$orange-trans-shadow: rgba(255, 160, 122, 0.5);
 $orange: #FE6001;
 $alert: rgba(177, 38, 14, 0.85);
 $success: rgba(62, 129, 62, 0.85);
@@ -110,8 +112,7 @@ h3 {
 }
 
 .form {
-  min-width: 33vw;
-  max-width: 94%;
+  width: 66%;
   background-color: $white-ish;
   padding: 3em;
   margin: auto;
@@ -135,6 +136,37 @@ h3 {
   min-height: 3em;
   display: flex;
   border: $lightgray solid 0.1px;
+}
+
+.form__input-group--checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: $white;
+  input[type="checkbox"] {
+    margin: 1em;
+    width: calc(5% - 2em);
+    &:hover {
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 0 10px $orange-flow;
+    }
+    &:focus {
+      outline: none;
+      color: $orange;
+      box-shadow: 0 0 10px $orange-flow;
+    }
+  }
+  label {
+    width: 45%;
+    margin-bottom: 0;
+    &:hover {
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: $orange-trans;
+      box-shadow: 0 0 10px $orange-trans-shadow;
+    }
+  }
 }
 
 .form__input-group--submit {
@@ -277,7 +309,7 @@ h3 {
 .featured,
 .location,
 .category {
-  padding: 1em 1em 1.5em;
+  padding: 2em 2em 2.5em;
   background-position: center;
   background-size: cover;
 }
@@ -300,7 +332,7 @@ h3 {
 
 .category {
   width: 25%;
-  min-height: 220px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -342,6 +374,7 @@ h3 {
 .article {
   width: 50%;
   display: flex;
+  min-height: 380px;
 }
 
 .article__image {
@@ -359,8 +392,8 @@ h3 {
 .article__card {
   width: 50%;
   background-color: $white-ish;
-  padding: 1em 1em 1.5em;
-  max-height: 250px;
+  padding: 2em 2em 2.5em;
+  max-height: 380px;
 }
 
 .article__title {
@@ -370,6 +403,22 @@ h3 {
   font-size: 1.2em;
   line-height: 1.5em;
   margin-bottom: 1em;
+}
+
+.article__edit {
+  margin: 0 0.15em 0 0;
+  font-size: 1.3em;
+  color: rgb(38, 194, 38);
+  transition: all ease-out 250ms;
+  &:hover {
+    color: $orange;
+    text-shadow: 0 0 10px $orange-flow;
+  }
+  &:focus {
+    outline: none;
+    color: $orange;
+    text-shadow: 0 0 10px $orange-flow;
+  }
 }
 
 .article__like {

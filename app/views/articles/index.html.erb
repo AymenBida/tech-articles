@@ -1,22 +1,24 @@
 <div class="main-container main-container--for-articles">
-<div class="articles">
-  <% counter = 0 %>
-  <% flex_order = ' article__image--order-second' %>
-  <% @articles.each do |article| %>
-    <% counter += 1 %>
-    <% if counter.odd? %>
-      <% case flex_order %>
-      <% when '' %>
-      <% flex_order = ' article__image--order-second' %>
-      <% when ' article__image--order-second' %>
-      <% flex_order = '' %>
+  <div class="articles">
+    <% counter = 0 %>
+    <% flex_order = ' article__image--order-second' %>
+    <% @articles.each do |article| %>
+      <% counter += 1 %>
+      <% if counter.odd? %>
+        <% case flex_order %>
+        <% when '' %>
+        <% flex_order = ' article__image--order-second' %>
+        <% when ' article__image--order-second' %>
+        <% flex_order = '' %>
       <% end %>
     <% end %>
     <div class="article">
       <div class="article__image<%= flex_order %>" style="background-image: url(<%= article.image %>), url(<%= asset_path 'no_image.svg.png' %>)"></div>
       <div class="article__card">
-        <h1 class="article__title"><%= article.title.truncate(20) %></h1><span><%= show_vote(article) %></span>
-        <p class="article__body"><%= article.text.truncate(140) %></p>
+        <span><%= show_edit(article) %></span>
+        <h1 class="article__title"><%= article.title.truncate(22) %></h1>
+        <span><%= show_vote(article) %></span>
+        <p class="article__body"><%= article.text.truncate(300) %></p>
         <p class="article__author"><%= article.author.name %></p>
       </div>
     </div>

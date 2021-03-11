@@ -1,6 +1,6 @@
 <div class="main-container main-container--no-limit">
   <div class="form">
-    <h1 class="form__title">Use this form to write your article: </h1>
+    <h1 class="form__title">Use this form to edit your article: </h1>
     <%= form_for @article do |f| %>
       <div class="form__group">
         <%= f.label :title, class: 'form__label' %>
@@ -22,7 +22,7 @@
       </div>
       <%= fields_for :articles_categories do |field| %>
       <div class="form__group">
-        <%= f.label :category_id, class: 'form__label' %>
+        <%= f.label :category_id, 'Add category', class: 'form__label' %>
         <div class="form__input-group form__input-group--checkbox">
           <%= field.collection_check_boxes :category_id, @categories, :id, :name %>
         </div>
