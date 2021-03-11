@@ -32,28 +32,19 @@ class ArticlesController < ApplicationController
 
   def edit
     set_article
-    @categories = Category.all.pluck(:name, :id)
-    @category = @article.categories.first
+    @categories = Category.where.not(id: @article.categories)
   end
 
   def update
     set_article
-    @category = @article.categories.take
-    @categories = Category.all.pluck(:name, :id)
+    @categories = Category.where(id: article_category_params[:category_id])
     if @article.update(article_params)
-      unless @category.id == article_category_params[:category_id].to_i
-        @category.priority -= 1
-        @category.save
-        @article.categories.destroy_all
-        @new_category = Category.find_by(id: article_category_params[:category_id])
-        @article.categories << @new_category
-        @new_category.priority += 1
-        @new_category.save
-      end
+      @categories.each { |cat| @article.categories << cat } unless @categories.empty?
       redirect_to categories_path, notice: 'You successfully edited your article'
     else
       @article.valid?
       flash.now.alert = "Sorry! #{@article.errors.full_messages.first}!"
+      @categories = Category.where.not(id: @article.categories)
       render :edit
     end
   end
