@@ -7,6 +7,8 @@ $black-ish: rgb(53, 53, 53);
 $white: white;
 $white-ish: whitesmoke;
 $orange-flow: lightsalmon;
+$orange-trans: rgba(255, 160, 122, 0.25);
+$orange-trans-shadow: rgba(255, 160, 122, 0.5);
 $orange: #FE6001;
 $alert: rgba(177, 38, 14, 0.85);
 $success: rgba(62, 129, 62, 0.85);
@@ -135,6 +137,38 @@ h3 {
   min-height: 3em;
   display: flex;
   border: $lightgray solid 0.1px;
+}
+
+.form__input-group--checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: $white;
+  input[type="checkbox"] {
+    box-sizing: content-box;
+    margin: 1em;
+    width: calc(5% - 2em);
+    &:hover {
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 0 10px $orange-flow;
+    }
+    &:focus {
+      outline: none;
+      color: $orange;
+      box-shadow: 0 0 10px $orange-flow;
+    }
+  }
+  label {
+    width: 45%;
+    margin-bottom: 0;
+    &:hover {
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: $orange-trans;
+      box-shadow: 0 0 10px $orange-trans-shadow;
+    }
+  }
 }
 
 .form__input-group--submit {

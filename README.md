@@ -29,6 +29,7 @@ To get a local copy up and running follow these simple example steps:
 ### Install
 
 - Run `bundle install`
+- Run `yarn install`
 - Create the database `rails db:create` 
 - Migrate the database `rails db:migrate`
 - Seed it `rails db:seed`

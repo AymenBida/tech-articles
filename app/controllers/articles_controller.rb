@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = current_user.articles.build
-    @categories = Category.all.pluck(:name, :id)
+    @categories = Category.all
   end
 
   def create
