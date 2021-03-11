@@ -15,10 +15,8 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      @category = Category.find_by(id: article_category_params[:category_id])
-      @category.priority += 1
-      @category.save
-      @article.categories << @category
+      @categories = Category.where(id: article_category_params[:category_id])
+      @categories.each { |cat| @article.categories << cat }
       redirect_to categories_path, notice: 'You successfully created an article'
     else
       flash.now.alert = 'Oops, something went wrong !'
@@ -71,6 +69,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_category_params
-    params.require(:articles_categories).permit(:category_id)
+    params.require(:articles_categories).permit(category_id: [])
   end
 end
