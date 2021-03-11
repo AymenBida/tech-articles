@@ -15,11 +15,8 @@ namespace :db do
     cats = Category.all
     cats.each do |cat|
       5.times do |_i|
-        article = Article.new(author_id: User.all.sample.id, title: TITLES.sample, text: TEXTS.sample, image: IMAGES.sample)
+        article = Article.create(author_id: User.all.sample.id, title: TITLES.sample, text: TEXTS.sample, image: IMAGES.sample)
         article.categories << cat
-        article.save
-        cat.priority += 1
-        cat.save
       end
     end
   end

@@ -1,2 +1,7 @@
 <%= link_to 'Home', categories_path, class: 'navbar__link navbar__link--menu' %>
 <%= link_to 'Write an article', new_article_path, class: 'navbar__link navbar__link--menu' %>
+
+<% Category.all.order(priority: :desc).limit(6).each do |cat| %>
+  <%= link_to cat.name, articles_path(cat: cat.id), class: 'navbar__link navbar__link--menu' %>
+<% end %>
+
