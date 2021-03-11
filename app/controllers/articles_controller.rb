@@ -14,12 +14,18 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    if @article.save
-      @categories = Category.where(id: article_category_params[:category_id])
+    @categories = Category.where(id: article_category_params[:category_id])
+    if @categories.empty?
+      flash.now.alert = 'You have to choose at least one category!'
+      @categories = Category.all
+      render :new
+    elsif @article.save
       @categories.each { |cat| @article.categories << cat }
       redirect_to categories_path, notice: 'You successfully created an article'
     else
-      flash.now.alert = 'Oops, something went wrong !'
+      @article.valid?
+      flash.now.alert = "Sorry! #{@article.errors.full_messages.first}!"
+      @categories = Category.all
       render :new
     end
   end
