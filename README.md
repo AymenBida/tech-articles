@@ -1,6 +1,6 @@
 # Tech Articles
 
-> This is a web app made with Ruby on Rails where users can share articles about technology and vote them.
+> This is a web app made with Ruby on Rails where users can share articles about technology and vote for them.
 
 
 ![screenshot](app/assets/images/tech_articles.png)
