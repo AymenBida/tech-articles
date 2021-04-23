@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user
-  skip_before_action :authenticate_user, only: %i[index new create]
+  # before_action :authenticate_user
+  # skip_before_action :authenticate_user, only: %i[index new create]
 
   def index
     @category = Category.find(params[:cat])
-    @articles = @category.articles.order_by_most_recent.includes(:author)
+    @articles = @category.articles.includes(:author).order_by_most_recent
     @category.priority += 1
     @category.save
   end
